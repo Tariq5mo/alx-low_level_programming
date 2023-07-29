@@ -8,11 +8,11 @@ int main(void)
 {
 	int n = 0;
 
-	while (n < 5 || (n > 5 && n < 17) || (n > 17 && n < 26))
+	while (n < 26)
 	{
 		putchar(97 + n);
 		n++;
-		if (n == 5 || n == 17)
+		if (n == 4 || n == 16)
 			n++;
 	}
 	putchar('\n');
