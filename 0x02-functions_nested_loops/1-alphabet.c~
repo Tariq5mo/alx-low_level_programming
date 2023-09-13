@@ -1,0 +1,12 @@
+#include "main.h"
+/**
+ * print_alphabet - check the code for Holberton School students.
+ *
+ */
+void print_alphabet(void)
+{
+	int g;
+	for (g = 'a'; g <= 'z'; g++)
+		_putchar(g);
+	_putchar('\n');
+}
