@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <climits>
 /**
  * print_number - print number
  *
@@ -10,7 +10,11 @@ void print_number(int n)
 {
 	int dig, rev;
 
-	if (n == 0)
+	if (n == INT_MIN)
+		_putchar("-2147483648");
+	else if (n == INT_MAX)
+		_putchar("2147483647");
+	else if (n == 0)
 		_putchar(n + '0');
 	else if (n < 0)
 	{
