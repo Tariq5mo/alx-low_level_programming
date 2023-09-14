@@ -11,10 +11,10 @@ void print_number(int n)
 	int dig, rev;
 
 	if (n == 0)
-		putchar(n + '0');
+		_putchar(n + '0');
 	else if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		n = n * -1;
 	}
 	rev = 0;
@@ -27,8 +27,8 @@ void print_number(int n)
 	while (rev > 0)
 	{
 		dig = rev % 10;
-		putchar(dig + '0');
+		_putchar(dig + '0');
 		rev = rev / 10;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
