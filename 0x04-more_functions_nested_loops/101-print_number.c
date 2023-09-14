@@ -1,5 +1,6 @@
-#include "main.h"
 #include <climits>
+#include "main.h"
+
 /**
  * print_number - print number
  *
