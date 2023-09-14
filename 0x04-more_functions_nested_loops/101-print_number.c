@@ -30,4 +30,5 @@ void print_number(int n)
 		putchar(dig + '0');
 		rev = rev / 10;
 	}
+	putchar('\n');
 }
