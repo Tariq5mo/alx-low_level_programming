@@ -1,4 +1,4 @@
-1;2c#include "main.h"
+#include "main.h"
 
 /**
  * _strlen - reverse and print
