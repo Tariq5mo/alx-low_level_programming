@@ -25,10 +25,11 @@ int _strlen(char *s)
  */
 void rev_string(char *s)
 {
-	int l, leng, g = 0;
+	int l, leng, g;
 	char *p;
 
 	p = "";
+	g = 0;
 	leng = _strlen(s);
 	for (l = 0; *(s + l) > '\0'; l++)
 	{
