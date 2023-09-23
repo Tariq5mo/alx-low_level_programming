@@ -14,11 +14,11 @@ void print_array(int *a, int n)
 		num = *(a + l);
 		if (num == 0)
 		{
-			putchar(num + '0');
+			_putchar(num + '0');
 		}
 		if (num < 0)
 		{
-			putchar('-');
+			_putchar('-');
 			num = num * -1;
 		}
 		while (num > 0)
@@ -30,15 +30,15 @@ void print_array(int *a, int n)
 		while (rev > 0)
 		{
 			dig = rev % 10;
-			putchar(dig + '0');
+			_putchar(dig + '0');
 			rev = rev / 10;
 		}
 		if (l != (n - 1))
 		{
-			putchar(',');
-			putchar(' ');
+			_putchar(',');
+			_putchar(' ');
 		}
 		rev = 0;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
