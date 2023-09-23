@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_array - print n elemnts
  *
