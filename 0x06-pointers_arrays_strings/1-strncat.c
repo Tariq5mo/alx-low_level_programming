@@ -30,12 +30,15 @@ char *_strncat(char *dest, char *src, int n)
 	char *p;
 	int i, j;
 
-	for (i = _strlen(dest), j = 0; j < n; i++, j++)
+	if (dest != NULL && src != NULL)
 	{
-		*(dest + i) = *(src + j);
+		for (i = _strlen(dest), j = 0; j < n; i++, j++)
+		{
+			*(dest + i) = *(src + j);
+		}
+		if (j < n)
+			*(dest + i) = '\0';
+		p = dest;
+		return (p);
 	}
-	if (j < n)
-		*(dest + i) = '\0';
-	p = dest;
-	return (p);
 }
