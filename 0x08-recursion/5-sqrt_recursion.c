@@ -7,15 +7,15 @@
  * @m: the product
  * Return: the pro
  */
-int odd(int n,int m)
+int odd(int n, int m)
 {
-	if (n == m *m)
+	if (n == m * m)
 		return (m);
-	else if (n < m *m)
+	else if (n < m * m)
 	{
 		return (-1);
 	}
-	return odd(n, m + 1);
+	return (odd(n, m + 1));
 }
 
 /**
