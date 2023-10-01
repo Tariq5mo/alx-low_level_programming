@@ -1,0 +1,31 @@
+#include "main.h"
+
+/**
+ * _prime - determine if the num is prime or not
+ *
+ * @n: the num
+ * @m: the divied num
+ * Return: 1 if prime 0 not
+ */
+int _prime(int n, int m)
+{
+	if (m == n)
+		return (1);
+	else if (((n % m) == 0) || m > n)
+		return (0);
+	_prime(n, m + 1);
+}
+
+/**
+ * is_prime_number - is return if num is prime or not
+ *
+ * @n: the num
+ * Return: 1 for prime, 0 otherwise
+ */
+int is_prime_number(int n)
+{
+	int m;
+
+	m = 2;
+	return _prime(n, m);
+}
