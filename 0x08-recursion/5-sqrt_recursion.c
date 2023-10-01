@@ -7,7 +7,7 @@
  * @m: the product
  * Return: the pro
  */
-int odd(n, m)
+int odd(int n,int m)
 {
 	if (n == m *m)
 		return (m);
@@ -15,8 +15,9 @@ int odd(n, m)
 	{
 		return (-1);
 	}
-	odd(n, m + 1);
+	return odd(n, m + 1);
 }
+
 /**
  * _sqrt_recursion - the square
  *
