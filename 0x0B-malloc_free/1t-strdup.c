@@ -30,10 +30,10 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	i = _strlen(str);
-	s = malloc(sizeof(char) * i);
+	s = malloc(sizeof(char) * (i + 1));
 	if (s == NULL) 
 		return (NULL);
-	for (l = 0; l <= i; l++)
+	for (l = 0; l != i; l++)
 		s[l] = str[l];
 	return (s);
 	free(s);

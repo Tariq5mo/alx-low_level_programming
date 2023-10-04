@@ -6,7 +6,7 @@
  *
  * @s: the string
  * Return: the length
-*/
+ */
 int _strlen(char *s)
 {
 	int i;
@@ -21,7 +21,7 @@ int _strlen(char *s)
  *
  * @str: the string
  * Return: the depublicated string
-*/
+ */
 char *_strdup(char *str)
 {
 	int l, i;
@@ -33,9 +33,8 @@ char *_strdup(char *str)
 	s = malloc(sizeof(char) * (i + 1));
 	if (s == NULL)
 		return (NULL);
-	for (l = 0; l <= i; l++)
+	for (l = 0; l != i; l++)
 		s[l] = str[l];
 	return (s);
 	free(s);
 }
-
