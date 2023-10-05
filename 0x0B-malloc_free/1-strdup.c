@@ -34,7 +34,7 @@ char *_strdup(char *str)
 	if (s == NULL)
 		return (NULL);
 	for (l = 0; l != i; l++)
-		s[l] = str[l];
+		s[l] = str[l];<
 	return (s);
 	free(s);
 }
