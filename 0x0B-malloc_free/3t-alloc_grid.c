@@ -24,7 +24,7 @@ int **alloc_grid(int width, int height)
 		{
 			for (j = 0; j < i; j++)
 			{
-				free(p[i]);
+				free(p[j]);
 			}
 			free(p);
 			return (NULL);
@@ -43,42 +43,43 @@ int **alloc_grid(int width, int height)
 }
 void print_grid(int **grid, int width, int height)
 {
-    int w;
-    int h;
+	int w;
+	int h;
 
-    h = 0;
-    while (h < height)
-    {
-	w = 0;
-	while (w < width)
+	h = 0;
+	while (h < height)
 	{
-	    printf("%d ", grid[h][w]);
-	    w++;
+		w = 0;
+		while (w < width)
+		{
+			printf("%d ", grid[h][w]);
+			w++;
+		}
+		printf("\n");
+		h++;
 	}
-	printf("\n");
-	h++;
-    }   
 }
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code .
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    int **grid;
+	int **grid;
+	int h;
+	int w;
 
-    grid = alloc_grid(6, 4);
-    if (grid == NULL)
-    {
-	return (1);
-    }
-    print_grid(grid, 6, 4);
-    printf("\n");
-    grid[0][3] = 98;
-    grid[3][4] = 402;
-    print_grid(grid, 6, 4);
-    return (0);
+	h = 20;
+	w = 20;
+	grid = alloc_grid(h, w);
+	if (grid == NULL)
+	{
+		return (1);
+	}
+	print_grid(grid, h, w);
+	printf("\n");
+	free(grid);
+	return (0);
 }
-
