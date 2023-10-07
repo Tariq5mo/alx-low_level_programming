@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	for (i = 1; i < argc; i++)
 	{
 		dig = strtol(argv[i], &endptr, 10);
-		if (endptr == argv[i])
+		if (endptr == argv[i] || *endptr != '\0')
 		{
 			printf("Error\n");
 			return (1);
