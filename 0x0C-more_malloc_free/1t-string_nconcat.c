@@ -54,7 +54,7 @@ int main(void)
 {
     char *concat;
 
-    concat = string_nconcat(NULL , "School !!!", 5);
+    concat = string_nconcat("12345", "good", -90);
     printf("%s\n", concat);
     free(concat);
     return (0);
