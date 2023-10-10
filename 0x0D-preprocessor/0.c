@@ -9,9 +9,6 @@
  */
 int main(void)
 {
-    int s;
-
-    s = 98 + SIZE;
-    printf("%d\n", s);
+    printf("%s\n", __FILE__);
     return (0);
 }
