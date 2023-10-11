@@ -1,41 +1,35 @@
-#include <stdio.h>
 #include "dog.h"
+#include <stdio.h>
 
 /**
- * print_dog - print details of the dog
+ * new_dog - this sdfd
  *
- * @d: the struct
+ * @name: ldkf
+ * @age: lsrhf
+ * @owner: sjflds
+ * Return: wejfwe
 */
-void print_dog(struct dog *d)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (!d)
-		return;
-	if (d->name == NULL)
-		printf("Name: (nil)\n");
-	else
-		printf("Name: %s\n", d->name);
-	if (d->age <= 0)
-		printf("Age: (nil)\n");
-	else
-		printf("Age: %lf\n", d->age);
-	if (d->owner == NULL)
-		printf("Owner: (nil)\n");
-	else
-		printf("Name: %s\n", d->owner);
+	dog_t *p;
+
+	p->name = malloc(sizeof(*name));
+	if (p->name == NULL)
+		return (NULL);
+	p->name = name;
+	p->owner = malloc(sizeof(*owner));
+	if (p->owner == NULL)
+		return (NULL);
+	p->owner = owner;
+	p->age = age;
+	return (p);
 }
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
 int main(void)
 {
-    struct dog my_dog;
+    dog_t *my_dog;
 
-    my_dog.name = NULL;
-    /*my_dog.age = 0;*/
-    my_dog.owner = "Bob";
-    print_dog(&my_dog);
+    my_dog = new_dog("Poppy", 3.5, "Bob");
+    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
     return (0);
 }
