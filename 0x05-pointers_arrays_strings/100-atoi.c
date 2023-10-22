@@ -14,9 +14,9 @@ int _atoi(char *s)
 	num = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (num == INT_MAX)
+		if (num >= INT_MAX)
 			return (INT_MAX);
-		if (num == INT_MIN)
+		if (num <= INT_MIN)
 			return (INT_MIN);
 		if (s[i] == '-')
 			sign *= -1;
