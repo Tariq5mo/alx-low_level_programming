@@ -26,6 +26,8 @@ int _atoi(char *s)
 				return (num * sign);
 		}
 	}
+	if (num == INT_MAX)
+		return (INT_MAX);
 	if (num == 0)
 		return (0);
 	return (num * sign);
