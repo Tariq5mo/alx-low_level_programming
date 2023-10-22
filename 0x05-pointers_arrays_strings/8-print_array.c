@@ -10,7 +10,7 @@ void print_array(int *a, int n)
 	int l, num, rev, dig;
 
 	if (n < 0)
-		exit;
+		exit (1);
 	rev = 0;
 	for (l = 0; l < n; l++)
 	{
