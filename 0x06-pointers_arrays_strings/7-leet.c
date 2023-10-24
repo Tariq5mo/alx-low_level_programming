@@ -20,7 +20,7 @@ char *leet(char *s)
 			if (s[j] == sA[i] || s[j] == sa[i])
 				s[j] = sn[i];
 			else
-				;
+				continue;
 		}
 	}
 	return (s);
