@@ -13,8 +13,6 @@ char *leet(char *s)
 	char *sa = "aeotl";
 	char *sn = "43071";
 
-	if (s == NULL)
-		return (NULL);
 	for (i = 0; i < 5; i++)
 	{
 		for (j = 0; s[j] != '\0'; j++)
