@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - return the length
+ * _strlen_recursion - return the length of the caller
  *
- * @s: the string
+ * @b: the string which determine it's length
  * Return: the length
  */
 int _strlen_recursion(char *s)
@@ -13,22 +13,24 @@ int _strlen_recursion(char *s)
 	else
 		return (1 + _strlen_recursion(s + 1));
 }
+
 /**
- * palindrome - determine if palindrome or not
+ * _palindrome - determine if palindrome is
  *
- * @s:The string
- * @n:The bigiining
- * @m:The end
+ * @s:string
+ * @n:beginng
+ * @m:end
  * Return: 1 if palindrome 0 if not
  */
-int palindrome(char *s, int n, int m)
+int _palindrome(char *s, int n, int m)
 {
-	if (*(s + n) != *(s + m))
+	if (*(s + n) != *(s + m))/*First condition*/
 		return (0);
-	else if (n == m || n > m)
+	else if (n == m || n > m)/*Second condition*/
 		return (1);
-	return (palindrome(s, n + 1, m - 1));
+	return (_palindrome(s, n + 1, m - 1));
 }
+
 /**
  * is_palindrome - also for palindrome
  *
@@ -41,5 +43,5 @@ int is_palindrome(char *s)
 
 	n = 0;
 	m = _strlen_recursion(s) - 1;
-	return (palindrome(s, n, m));
+	return (_palindrome(s, n, m));
 }

@@ -1,27 +1,27 @@
 #include "main.h"
 
 /**
- * odd - odd
+ * _od - odd
  *
- * @n: the number
- * @m: the product
- * Return: the pro
+ * @i: number
+ * @j: product
+ * Return: the odd
  */
-int odd(int n, int m)
+int _od(int i, int j)
 {
-	if (n == m * m)
-		return (m);
-	else if (n < m * m)
+	if (i == j * j)
+		return (j);
+	else if (i < j * j)
 	{
 		return (-1);
 	}
-	return (odd(n, m + 1));
+	return (odd(i, j + 1));
 }
 
 /**
- * _sqrt_recursion - the square
+ * _sqrt_recursion - the square is
  *
- * @n: the number
+ * @n: number
  * Return: the square
  */
 int _sqrt_recursion(int n)

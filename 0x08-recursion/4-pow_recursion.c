@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * _pow_recursion - power of a number
+ * _pow_recursion - power of a normal number
  *
- * @x: the number
- * @y: the power
+ * @x: number
+ * @y: power
  * Return: the result
  */
 int _pow_recursion(int x, int y)
 {
-	if (y < 0)
+	if (y < 0)/*For condition*/
 		return (-1);
-	else if (y == 0)
+	else if (y == 0)/*else if*/
 		return (1);
 	else if (y == 1)
 		return (x);

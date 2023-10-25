@@ -1,25 +1,25 @@
 #include "main.h"
 
 /**
- * _prime - determine if the num is prime or not
+ * Det_prime - determine if the num is prime or not
  *
- * @n: the num
- * @m: the divied num
+ * @i: the num
+ * @j: the divied num
  * Return: 1 if prime 0 not
  */
-int _prime(int n, int m)
+int Det_prime(int i, int j)
 {
-	if (m == n)
+	if (i == j)
 		return (1);
-	else if (((n % m) == 0) || m > n)
+	else if (((i % j) == 0) || j > i)
 		return (0);
-	return (_prime(n, m + 1));
+	return (_prime(i, j + 1));
 }
 
 /**
- * is_prime_number - is return if num is prime or not
+ * is_prime_number - it is  return if num is prime or not
  *
- * @n: the num
+ * @n: number
  * Return: 1 for prime, 0 otherwise
  */
 int is_prime_number(int n)
