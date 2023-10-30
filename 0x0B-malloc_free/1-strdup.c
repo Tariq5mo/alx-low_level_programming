@@ -2,39 +2,39 @@
 #include <stdlib.h>
 
 /**
- * _strlen - calculate the lenght
+ * _strlen - the lenght
  *
- * @s: the string
- * Return: the length
+ * @s: oldstring
+ * Return: the_length_ofit
  */
 int _strlen(char *s)
 {
-	int i;
+	int j;
 
-	i = 0;
-	for (; *(s + i) != '\0'; i++)
+	j = 0;
+	for (; *(s + j) != '\0'; j++)
 		;
-	return (i);
+	return (j);
 }
 /**
- * _strdup - copy a string to another
+ * _strdup - copy a string to new location
  *
- * @str: the string
- * Return: the depublicated string
+ * @str: old string
+ * Return: the new string
  */
 char *_strdup(char *str)
 {
-	int l, i;
-	char *s;
+	int l, k;
+	char *g;/*the string*/
 
 	if (str == NULL)
 		return (NULL);
-	i = _strlen(str);
-	s = malloc(sizeof(char) * (i + 1));
-	if (s == NULL)
+	k = _strlen(str);
+	g = malloc(sizeof(*str));
+	if (g == NULL)
 		return (NULL);
-	for (l = 0; l != i; l++)
-		s[l] = str[l];<
-	return (s);
-	free(s);
+	for (l = 0; str[l] != '\0'; l++)
+		g[l] = str[l];
+	g[l] = '\0';
+	return (g);
 }

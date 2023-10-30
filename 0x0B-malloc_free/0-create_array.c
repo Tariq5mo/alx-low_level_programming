@@ -2,24 +2,23 @@
 #include <stdlib.h>
 
 /**
- * create_array - create an array
+ * create_array - create array of one chars
  *
- * @size: the size
- * @c: the character
- * Return: A pointer to an array
+ * @size: the size of the array
+ * @c: the character which the content of the array
+ * Return: array
  */
 char *create_array(unsigned int size, char c)
 {
-	unsigned int i;
-	char *s;
+	unsigned int j;
+	char *c;
 
 	if (size == 0)
 		return (NULL);
-	s = malloc(sizeof(char) * size);
-	if (s == NULL)
+	c = malloc(sizeof(char) * size);
+	if (c == NULL)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		s[i] = c;
-	return (s);
-	free(s);
+	for (j = 0; j < size; j++)
+		c[j] = c;
+	return (c);
 }
