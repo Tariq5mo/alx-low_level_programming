@@ -1,1 +1,1 @@
-This for library 
+This project for help me to learn static library
