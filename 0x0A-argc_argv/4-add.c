@@ -1,36 +1,36 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * main - Entry point
+ * main - Print the additition
  *
- * @argc: the count of arguments
- * @argv: the string
- * Return: The 1 when fails, 0 when Success
-*/
-int main(int argc, char *argv[])
+ * @argc: digits
+ * @argv: digits are inside this array
+ * Return: 0 Success, 1 if not
+ */
+int main(int argc, char **argv)
 {
-	long add, dig, i;
-	char *endptr;
+	int n, m, add;
+	char *pn;
 
 	add = 0;
-	endptr = NULL;
-	if (argc == 1)
+	if (argc == 1)/*If there are not digits*/
 	{
 		printf("0\n");
 		return (0);
 	}
-	for (i = 1; i < argc; i++)
+	for (n = 1; n < argc; n++)
 	{
-		dig = strtol(argv[i], &endptr, 10);
-		if (endptr == argv[i] || *endptr != '\0')
+		pn = argv[n];
+		for (m = 0; pn[m] != '\0'; m++)
 		{
-			printf("Error\n");
-			return (1);
+			if (isdigit(pn[m]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-			add = add + dig;
+		add += atoi(pn);
 	}
-	printf("%ld\n", add);
+	printf("%d\n", add);
 	return (0);
 }
