@@ -1,1 +1,1 @@
-This for learning malloc and free
+In this project we learn to use malloc and free to allocate dynamic memory in c

@@ -1,20 +1,18 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * free_grid - free the last 2-d array
+ * free_grid - free 2 grid
  *
- * @grid: the array
- * @height: the height of array
+ * @grid: The two dimensional array
+ * @height: the height of it
 */
 void free_grid(int **grid, int height)
 {
 	int j;
 
-	for (j = 0; j < height; j++)
+	for (j = 0; j < height; j++)/*Free the rest of the the grid*/
 	{
-		free(grid[j]);
+		free(grid[j]);/*Then the array of pointers*/
 	}
 		free(grid);
 }

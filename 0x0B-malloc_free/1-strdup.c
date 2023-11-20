@@ -1,40 +1,38 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * _strlen - the lenght
+ * _strlen - length of a string
  *
- * @s: oldstring
- * Return: the_length_ofit
+ * @s: The string which calculate it's length
+ * Return: length
  */
 int _strlen(char *s)
 {
-	int j;
+	int k;
 
-	j = 0;
-	for (; *(s + j) != '\0'; j++)
+	k = 0;
+	for (; *(s + k) != '\0'; k++)
 		;
-	return (j);
+	return (k);
 }
 /**
- * _strdup - copy a string to new location
+ * _strdup - put a string to new memory location
  *
- * @str: old string
- * Return: the new string
+ * @str: The_old_string
+ * Return: new_string
  */
 char *_strdup(char *str)
 {
-	int l, k;
-	char *g;/*the string*/
+	int i, j;
+	char *s;
 
 	if (str == NULL)
 		return (NULL);
-	k = _strlen(str);
-	g = malloc(sizeof(*str));
-	if (g == NULL)
+	i = _strlen(str);
+	s = malloc(sizeof(char) * (i + 1));
+	if (s == NULL)
 		return (NULL);
-	for (l = 0; str[l] != '\0'; l++)
-		g[l] = str[l];
-	g[l] = '\0';
-	return (g);
+	for (j = 0; j != i; j++)
+		s[j] = str[j];
+	return (s);
 }
