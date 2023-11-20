@@ -43,3 +43,7 @@ char *str_concat(char *s1, char *s2)
 	s[j] = '\0';
 	return (s);
 }
+int main(void)
+{
+	printf("finally_vscode\n");
+}
