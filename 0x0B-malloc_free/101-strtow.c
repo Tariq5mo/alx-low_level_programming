@@ -1,19 +1,17 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * strtow - spilt string into words
+ * strtow - kkf;sdf
  *
- * @str: the string
- * Return: the **p
+ * @str: ksduf;dsknf
+ * Return: jhfv,bdjdskjf
  */
 char **strtow(char *str)
 {
 	int i, j, n, w, cw[5000];
 	char **s;
 
-	w = j = 0;
+	w = j = 0;/*skhdlskdjhbfl*/
 	for (i = 0; str[i] != '\0';)
 	{
 		n = 0;
