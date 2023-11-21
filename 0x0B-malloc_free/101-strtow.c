@@ -36,7 +36,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < w; i++)/*Reseve memory for characters*/
 	{
-		s[i] = malloc(sizeof(char) * (cw[i] + 1));
+		s[i] = malloc(sizeof(char) * (cw[i] + 2));
 		if (s[i] == NULL)
 		{
 			for (j = i - 1; j >= 0; j--)
