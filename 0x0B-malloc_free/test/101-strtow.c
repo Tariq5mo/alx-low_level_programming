@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * strtow - kkf;sdf
+ * strtow - splits a string into words
  *
- * @str: ksduf;dsknf
- * Return: jhfv,bdjdskjf
+ * @str: The string
+ * Return: Array of pointers
  */
 char **strtow(char *str)
 {
 	int i, j, n, w, cw[5000];
 	char **s;
 
-	w = j = 0;/*skhdlskdjhbfl*/
+	w = j = 0;
 	for (i = 0; str[i] != '\0';)
 	{
 		n = 0;

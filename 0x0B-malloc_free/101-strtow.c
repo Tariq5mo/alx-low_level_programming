@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * strtow - kkf;sdf
+ * strtow - splits a string into words
  *
- * @str: ksduf;dsknf
- * Return: jhfv,bdjdskjf
+ * @str: The string
+ * Return: Array of pointers
  */
 char **strtow(char *str)
 {
 	int i, j, n, w, cw[5000];
 	char **s;
 
-	w = j = 0;/*skhdlskdjhbfl*/
+	w = j = 0;
 	for (i = 0; str[i] != '\0';)
 	{
 		n = 0;
@@ -29,15 +29,12 @@ char **strtow(char *str)
 		while (str[i] == ' ' || str[i] =='\t')
 			i++;
 	}
-	s = malloc(sizeof(char *) * w);
+	s = malloc((sizeof(char *) * w) + 1);/*Array of pointers*/
 	if (s == NULL || *str == '\0' || str == NULL)
 		return (NULL);
-	for (i = 0; i < w; i++)/*malloc*/
+	for (i = 0; i < w; i++)/*Reseve memory for characters*/
 	{
-		if (i == w - 1)/*Represent the last pointer*/
-			s[i] = malloc(sizeof(char) * (cw[i] + 2));
-		else
-			s[i] = malloc(sizeof(char) * (cw[i] + 1));
+		s[i] = malloc(sizeof(char) * (cw[i] + 1));
 		if (s[i] == NULL)
 		{
 			for (j = i - 1; j >= 0; j--)
@@ -46,6 +43,7 @@ char **strtow(char *str)
 			return (NULL);
 		}
 	}
+	s[i] = NULL;
 	for (i = 0, j = 0; str[i] != '\0';)/*Fill blanks*/
 	{
 		n = 0;
@@ -63,6 +61,5 @@ char **strtow(char *str)
 		while (str[i] == ' ' || str[i] =='\t')
 			i++;
 	}
-	s[j - 1][n] = 0;
 	return (s);
 }
