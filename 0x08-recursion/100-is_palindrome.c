@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - return the length of the caller
+ * _strlen_recursion - return the length of tstring
  *
- * @b: the string which determine it's length
- * Return: the length
+ * @s: the string
+ * Return: the length of the string
  */
 int _strlen_recursion(char *s)
 {
@@ -15,27 +15,27 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * _palindrome - determine if palindrome is
+ * _palind - determine if the string is palindrome or not
  *
- * @s:string
- * @n:beginng
- * @m:end
+ * @s: the string
+ * @n: the beginng
+ * @m: the end
  * Return: 1 if palindrome 0 if not
  */
-int _palindrome(char *s, int n, int m)
+int _palind(char *s, int n, int m)
 {
-	if (*(s + n) != *(s + m))/*First condition*/
+	if (*(s + n) != *(s + m))
 		return (0);
-	else if (n == m || n > m)/*Second condition*/
+	else if (n == m || n > m)
 		return (1);
-	return (_palindrome(s, n + 1, m - 1));
+	return (_palind(s, n + 1, m - 1));
 }
 
 /**
  * is_palindrome - also for palindrome
  *
  * @s: The string
- * Return: 1 or 0 if not
+ * Return: 1 or 0 if it's not
  */
 int is_palindrome(char *s)
 {
@@ -43,5 +43,5 @@ int is_palindrome(char *s)
 
 	n = 0;
 	m = _strlen_recursion(s) - 1;
-	return (_palindrome(s, n, m));
+	return (_palind(s, n, m));
 }
