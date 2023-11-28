@@ -43,8 +43,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	for (po = p->name; *po != '\0'; po++, name++)
 		*po = *name;
+		*po = '\0';
 	for (po = p->owner; *po != '\0'; po++, owner++)
 		*po = *owner;
+		*po = '\0';
 	p->age = age;
 	return (p);
 }
