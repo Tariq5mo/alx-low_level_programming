@@ -13,7 +13,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *p;
 
-	p->name = malloc(sizeof(*name));
+	p = malloc(sizeof(dog_t));
+	if (!p || !name || !owner)
+		return (NULL);
+	p->name = malloc(1);
 	if (p->name == NULL)
 		return (NULL);
 	p->name = name;
@@ -25,11 +28,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	return (p);
 }
 
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    dog_t *my_dog;
+	dog_t *my_dog;
 
-    my_dog = new_dog("Poppy", 3.5, "Bob");
-    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
-    return (0);
+	my_dog = new_dog("Poppy", 3.5, "Bob");
+	printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
+	return (0);
 }

@@ -1,14 +1,14 @@
 #include "dog.h"
 
 /**
- * free_dog - free dog
+ * free_dog - free a block of structure (a dog)
  *
- * @d: the free
+ * @d: the Structre
  * Return:void
 */
 void free_dog(dog_t *d)
 {
-	if (d)
+	if (d != NULL)
 	{
 		if (d->name)
 			free(d->name);
