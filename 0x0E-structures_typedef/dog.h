@@ -5,10 +5,11 @@
 #include <stdlib.h>
 /**
  * struct dog - To make new data type
- *
  * @name: The name of dog
  * @age: The age of dog
  * @owner: the owner of the dog
+ *
+ * Description: to make a dog
 */
 typedef struct dog
 {
