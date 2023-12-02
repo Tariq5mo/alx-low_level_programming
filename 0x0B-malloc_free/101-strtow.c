@@ -1,42 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * strtow - spilt string into words
+ * strtow - spilt string to separate words
  *
- * @str: the string
- * Return: the **p
+ * @str: a string
+ * Return: the array of words
  */
 char **strtow(char *str)
 {
-	int i, j, n, w, cw[5000];
+	int i, j, nu, wo, cw[6000];
 	char **s;
 
-	w = j = 0;
+	wo = j = 0;
 	for (i = 0; str[i] != '\0';)
 	{
-		n = 0;
-		while (str[i] != ' ' && str[i] !='\t' && str[i] != '\0')
+		nu = 0;
+		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\0')
 		{
-			n++;
+			nu++;
 			i++;
 		}
-		if (n > 0)
+		if (nu > 0)
 		{
-			cw[j] = n;
+			cw[j] = nu;
 			j++;
-			w++;
+			wo++;
 		}
-		while (str[i] == ' ' || str[i] =='\t')
+		while (str[i] == ' ' || str[i] == '\t')
 			i++;
 	}
-	s = malloc(sizeof(char *) * w);
+	s = malloc(sizeof(char *) * wo);
 	if (s == NULL || *str == '\0' || str == NULL)
 		return (NULL);
-	for (i = 0; i < w; i++)/*malloc*/
+	for (i = 0; i < wo; i++)
 	{
-		if (i == w - 1)/*Represent the last pointer*/
+		if (i == wo - 1)
 			s[i] = malloc(sizeof(char) * (cw[i] + 2));
 		else
 			s[i] = malloc(sizeof(char) * (cw[i] + 1));
@@ -48,23 +46,23 @@ char **strtow(char *str)
 			return (NULL);
 		}
 	}
-	for (i = 0, j = 0; str[i] != '\0';)/*Fill blanks*/
+	for (i = 0, j = 0; str[i] != '\0';)
 	{
-		n = 0;
+		
 		while (str[i] != ' ' && str[i] !='\t' && str[i] != '\0')
 		{
-			s[j][n] = str[i];
-			n++;
+			s[j][nu] = str[i];
+			nu++;
 			i++;
 		}
-		if (n > 0)
+		if (nu > 0)
 		{
-			s[j][n] = '\0';
+			s[j][nu] = '\0';
 			j++;
 		}
 		while (str[i] == ' ' || str[i] =='\t')
 			i++;
 	}
-	s[j - 1][n] = 0;
+	s[j - 1][nu] = 0;
 	return (s);
 }

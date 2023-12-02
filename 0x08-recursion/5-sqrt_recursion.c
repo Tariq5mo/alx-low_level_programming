@@ -15,7 +15,7 @@ int _od(int i, int j)
 	{
 		return (-1);
 	}
-	return (odd(i, j + 1));
+	return (_od(i, j + 1));
 }
 
 /**
@@ -29,5 +29,5 @@ int _sqrt_recursion(int n)
 	int m;
 
 	m = 1;
-	return (odd(n, m));
+	return (_od(n, m));
 }

@@ -13,7 +13,7 @@ int Det_prime(int i, int j)
 		return (1);
 	else if (((i % j) == 0) || j > i)
 		return (0);
-	return (_prime(i, j + 1));
+	return (Det_prime(i, j + 1));
 }
 
 /**
@@ -27,5 +27,5 @@ int is_prime_number(int n)
 	int m;
 
 	m = 2;
-	return (_prime(n, m));
+	return (Det_prime(n, m));
 }
