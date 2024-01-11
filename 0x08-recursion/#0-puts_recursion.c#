@@ -7,7 +7,7 @@
  */
 void _puts_recursion(char *s)
 {
-	int i;
+	int i, k
 
 	i = 0;
 	if (*(s + i) == '\0')
@@ -18,7 +18,7 @@ void _puts_recursion(char *s)
 	_putchar(*(s + i));
 	i++;
 	_puts_recursion(s + i);/*recursion*/
-	_putchar(*(s + i));
-	i++;
-	_puts_recursion(s + i);/*Go to next char*/
+	_putchar(*(s + k));
+	k++;
+	_puts_recursion(s + k);/*Go to next char*/
 }
