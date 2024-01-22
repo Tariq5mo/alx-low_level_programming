@@ -29,23 +29,27 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	p = (dog_t *) malloc(sizeof(dog_t));
 	if (!p || !name || !owner || age < 0)
+	{
+		free(p);
 		return (NULL);
-	p->name = malloc(sizeof(char) * (_strlen(name) + 2));
+	}
+	p->name = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (p->name == NULL)
 	{
 		free(p);
 		return (NULL);
 	}
-	p->owner = malloc(sizeof(char) * (_strlen(owner) + 2));
+	p->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (!p->owner)
 	{
 		free(p->name);/*name has it's block*/
 		free(p);
+		return (NULL);
 	}
 	for (po = p->name, i = 0; name[i] != '\0'; i++)
 		po[i] = name[i];
 	po[i] = '\0';
-	for (po = p->owner; name[i] != '\0'; po++, owner++)
+	for (po = p->owner, i = 0; owner[i] != '\0'; i++)
 		po[i] = owner[i];
 	po[i] = '\0';
 	p->age = age;
