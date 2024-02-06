@@ -1,0 +1,26 @@
+#include "lists.h"
+
+/**
+ * free_listint_safe - frees a listint_t list.
+ *
+ * @h: pointer to pointer to head node
+ * Return: the size of the list that was free’d
+*/
+size_t free_listint_safe(listint_t **h)
+{
+	size_t i;
+	listint_t *p;
+
+	if (!h || !*h)
+		return (0);
+	i = 0;
+	p = (*h)->next;
+	while (*h)
+	{
+		i += sizeof(listint_t);
+		free(*h);
+		*h = p->next;
+		p = p->next;
+	}
+	return (i);
+}

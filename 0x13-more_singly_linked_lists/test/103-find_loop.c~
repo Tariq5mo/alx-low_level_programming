@@ -1,0 +1,33 @@
+#include "lists.h"
+
+/**
+ * find_listint_loop
+ *
+ * @head: The head pointer
+ * Return: The address of the node where the loop starts, or NULL 
+*/
+listint_t *find_listint_loop(listint_t *head)
+{
+	listint_t *p;
+	int i;
+
+	if (!head)
+		return (NULL);
+	while (head)
+	{
+		p = head;
+		i = 100;
+		while (i > 0)
+		{
+			if (p)
+				p = p->next;
+			if (p == head)
+				return (p);
+			else if (!p)
+				return (NULL);
+			i--;
+		}
+		head = head->next;
+	}
+	return (NULL);
+}
