@@ -1,34 +1,35 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - returns the nth node of a dlistint_t linked list.
+ * insert_dnodeint_at_index - inserts a new node at a given position.
  *
- * @head:Pointer to first node of list
- * @index:the index of the node
- * Return: the nth node
+ * @h:Pointer to first node of list
+ * @idx:the index of the node
+ * @n: the node's value
+ * Return: the inserted node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new, **p = h;
-	unsigned int idxx = idx;
+	unsigned int idxx = idx, i = 0;
 
-        if (!h)
-                return (NULL);
-	for (; idx > 0 && *p && (*p)->next; p = &((*p)->next))
-                idx--;
-        if (!(*p) && idx > 0)/*check if valid*/
+	if (!h)
 		return (NULL);
-        new = malloc(sizeof(dlistint_t));/*create new node*/
-        if (!new)
-                return (NULL);
-        new->n = n;
-        new->prev = NULL;
-        new->next = NULL;
-        if (!(*h))/*case if the list is empty*/
-                (*h) = new;
-        else
-        {
-		if ((*p)->next)
+	for (; idx > 0 && *p && (*p)->next; p = &((*p)->next), i++)
+		idx--;
+	if (!(*p) && idx > 0 || idxx > i + 1)/*check if valid*/
+		return (NULL);
+	new = malloc(sizeof(dlistint_t));/*create new node*/
+	if (!new)
+		return (NULL);
+	new->n = n;
+	new->prev = NULL;
+	new->next = NULL;
+	if (!(*h))/*case if the list is empty*/
+		(*h) = new;
+	else
+	{
+		if ((*p)->next || idxx == i)
 		{
 			new->prev = (*p)->prev;
 			new->next = (*p);
@@ -40,9 +41,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		else
 		{
+			printf("Error %d, %d\n", idxx, i);
 			(*p)->next = new;
 			new->prev = (*p);
 		}
-        }
+	}
 	return (new);
 }
