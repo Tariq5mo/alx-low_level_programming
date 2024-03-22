@@ -10,12 +10,13 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new, **p = h;
-	unsigned int idxx = idx, i = 0;
+	dlistint_t *new, **p;
+	unsigned int idxx, i;
 
 	if (!h)
 		return (NULL);
-	for (; idx > 0 && *p && (*p)->next; p = &((*p)->next), i++)
+	idxx = idx
+	for (p = h, i = 0; idx > 0 && *p && (*p)->next; p = &((*p)->next), i++)
 		idx--;
 	if ((!(*p) && idx > 0) || (idxx > i + 1))/*check if valid*/
 		return (NULL);
@@ -41,7 +42,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		else
 		{
-			printf("Error %d, %d\n", idxx, i);
 			(*p)->next = new;
 			new->prev = (*p);
 		}
