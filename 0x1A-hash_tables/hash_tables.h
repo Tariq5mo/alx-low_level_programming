@@ -46,5 +46,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
+hash_node_t *add_nodehash(hash_node_t **head,
+const char *key, const char *value);
+size_t check_key(const hash_node_t *h, const char *key);
+int _strlen(char *s);
+size_t print_listint(const hash_node_t *h);
 
 #endif/*endif*/
