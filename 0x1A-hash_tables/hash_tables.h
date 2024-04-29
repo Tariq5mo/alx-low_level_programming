@@ -51,5 +51,5 @@ const char *key, const char *value);
 size_t check_key(const hash_node_t *h, const char *key);
 int _strlen(char *s);
 size_t print_listint(const hash_node_t *h);
-
+char *check_key_for4(const hash_node_t *h, const char *key);
 #endif/*endif*/
